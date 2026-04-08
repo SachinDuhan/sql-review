@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sql-review-openenv"
+version = "1.0.0"
+description = "OpenEnv SQL review and repair environment"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "sachin" }]
+dependencies = [
+  "fastapi==0.111.0",
+  "uvicorn[standard]==0.29.0",
+  "pydantic==2.7.1",
+  "sqlglot==23.12.0",
+  "openai>=1.0.0",
+  "openenv-core>=0.2.0",
+  "python-dotenv==1.0.1",
+  "requests==2.31.0"
+]
+
+[project.scripts]
+server = "server.app:main"
+
+[tool.setuptools]
+py-modules = ["inference"]
+
+[tool.setuptools.packages.find]
+include = ["server*"]

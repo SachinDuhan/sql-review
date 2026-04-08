@@ -1,0 +1,23 @@
+name: sql-review-env
+version: "1.0.0"
+description: >
+  An OpenEnv environment where an AI agent reviews, diagnoses, and fixes
+  broken or inefficient SQL queries. Simulates real-world data engineering
+  and analytics work.
+author: "what-am-i-doing-here"
+tags:
+  - openenv
+  - sql
+  - code-review
+  - data-engineering
+tasks:
+  - name: fix_syntax_error
+    difficulty: easy
+    description: Fix a SQL query with a syntax error
+  - name: fix_logic_error
+    difficulty: medium
+    description: Fix a SQL query with a semantic/logic bug
+  - name: optimize_query
+    difficulty: hard
+    description: Rewrite an inefficient SQL query to be correct and performant
+entrypoint: "uvicorn server.app:app --host 0.0.0.0 --port 7860"
